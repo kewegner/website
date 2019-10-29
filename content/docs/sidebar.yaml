@@ -1,6 +1,5 @@
-- items:
-    - title: Overview
-      path: /docs
+- title: Overview
+  path: /docs
 - title: Getting Started
   items:
     - title: Installation
@@ -29,8 +28,7 @@
       path: /docs/stacks/modify
     - title: Stack Variables
       path: /docs/stacks/environment-variables
-    - title: Building and Testing Stacks
+    - title: Building and Testing
       path: /docs/stacks/build-and-test
-- items:
-    - title: FAQ
-      path: /docs/faq
+- title: FAQ
+  path: /docs/faq

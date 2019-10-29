@@ -12,6 +12,7 @@
   --colour-scheme-1: #BB417C;
   --colour-scheme-2: #ED8E00;
   --colour-scheme-3: #C4302F;
+  --colour-scheme-1-dark: #963463;
 
 }
 
@@ -41,6 +42,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 10px !important;
 }
 
+.btn-primary:hover {
+  background-color:  var(--colour-scheme-1-dark) !important;
+  border-color: var(--colour-scheme-1-dark) !important;
+}
+
 .btn-clear {
   padding: 6px 12px;
   color: var(--links-colour);
@@ -49,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-clear:hover {
-  color: var(--links-colour);
+  background-color: var(--light-grey);
 }
 
 section.landing-section {
@@ -76,10 +82,50 @@ section.landing-section h2 {
   color: var(--links-colour) !important;
 }
 
+.nav-link:hover {
+  color: var(--colour-scheme-1) !important;
+}
+
 .navbar-img {
   height: 25px;
   width: 25px;
 }
+
+.navbar-toggler {
+  border: 0;
+}
+
+#main-nav .navbar-toggler-icon {
+  background-image: url("../images/search-icon.png") !important;
+  width: 25px;
+  height:25px;
+}
+
+.bigscreen-social {
+  display: flex;
+}
+
+.smallscreen-social {
+  display: none;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .bigscreen-social {
+    display: none;
+  }
+
+  .smallscreen-social {
+    display: flex;
+    
+  }
+}
+
+
+/* Cannot change as the Slack icon is not transparent in the middle. Saving for later */
+/* .navbar-img:hover {
+  filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
+} */
 
 @media only screen and (max-width: 767px) {
   .navbar-img {
@@ -194,6 +240,10 @@ section.landing-section h2 {
   background-color: white;
 }
 
+.flip a.btn:hover {
+  background-color: var(--light-grey);
+}
+
 .fa-arrow-left:hover, .fa-copy:hover {
   cursor: pointer;
 }
@@ -215,6 +265,7 @@ section.landing-section h2 {
   grid-column-start: 2;
   grid-column-end: 3;
   margin-top: 4em;
+  position: relative;
 }
 
 #docs-sidebar ul {
@@ -224,8 +275,8 @@ section.landing-section h2 {
 
 #docs-sidebar{
   position: fixed;
-  width: 15em;
-  padding-top: 5em;
+  width: 16em;
+  padding-top: 5.6em;
   background-color: var(--light-grey);
   height: 100%;
   left: 0;
@@ -233,10 +284,6 @@ section.landing-section h2 {
 
 #docs-sidebar li {
   margin-top: 2em;
-}
-
-#docs-sidebar a {
-  color: black;
 }
 
 #docs h2 {
@@ -275,6 +322,10 @@ section.landing-section h2 {
     grid-row-start: 1;
     grid-row-end: 2;
     background-color: white;
+  }
+
+  .form-control-sm {
+    font-size: 1.2rem;
   }
 }
 
@@ -347,11 +398,6 @@ footer a:hover {
     margin-right: 1em;
   }
 
-  #docs #twitter-nav{
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   #docs .navbar-brand img {
     margin: 0 !important;
   }
@@ -368,15 +414,20 @@ footer a:hover {
    code  {
      font-size: 0.8em;
   }
+
+  .dropdown-content {
+    min-width: 100%;
+    font-size: 1.0rem;
+  }
 }
 
 .navbar-brand {
   padding: 0;
 }
 
-#docs #brand-name {
+/* #docs #brand-name {
   display: none;
-}
+} */
 
 .doc-content table tr td {
   border: 0.1em solid var(--darker-grey);
@@ -401,6 +452,58 @@ footer a:hover {
   color: var(--colour-scheme-1);
 }
 
+.sidebar-link {
+  color: black;
+  width: 8em;
+}
+
+.sidebar-link:hover {
+  text-decoration: none;
+  color: var(--colour-scheme-1);
+
+}
+
+.sidebar-heading-link {
+  color: black;
+  font-size: 0.7em;
+  width: 8em;
+  margin-right: 1.4em;
+}
+
+.sidebar-heading-link.float-left {
+  margin-bottom:0 ;
+}
+
+.sidebar-heading-link a{
+  color: black;
+  font-size: 1.6em;
+  margin-left: 0.5em;
+}
+
+.accordion-dropdown:hover {
+  filter: invert(33%) sepia(54%) saturate(1628%) hue-rotate(295deg) brightness(86%) contrast(81%);
+}
+
+.accordion-dropdown {
+  height: 1.2em;
+}
+
+.sidebar-heading-link:hover {
+  text-decoration: none;
+}
+ 
+
+.sidebar-heading-link a:hover {
+  padding: 0;
+  text-decoration: none !important;
+  color: var(--colour-scheme-1);
+ 
+}
+
+.accordion ul {
+  margin-bottom: 2em;
+}
+
 .doc-content {
   padding-bottom: 3em;
   padding-left: 1rem;
@@ -412,9 +515,20 @@ footer a:hover {
   margin-bottom: 2em;
 }
 
-.doc-content h1, .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
-  padding-top: 2.5em;
-  margin-top: -2.5em;
+ .doc-content h5, .doc-content h6 {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.doc-content h1 {
+  margin: 0 0 1rem 0;
+}
+
+.doc-content h2 {
+  margin: 2.5rem 0 1rem 0;
+}
+
+.doc-content h3, .doc-content h4 {
+  margin: 2rem 0 1rem 0;
 }
 
 .dropdown {
@@ -457,7 +571,19 @@ footer a:hover {
 
 @media only screen and (max-width: 767px) {
   div .dropdown {
-    display: none;
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 10px;
+    margin-bottom: 10px !important;
+    margin-top: 25px !important;
+  }
+
+  .fa-search {
+    display: none !important;
   }
 
   #docs-sidebar div.dropdown {
@@ -467,4 +593,13 @@ footer a:hover {
 
 .hide {
   display: none;
+}
+
+.btn.btn-link {
+  padding: 0;
+  text-decoration: none !important;
+  color: var(--colour-scheme-1);
+  font-weight: bolder;
+  font-size: 1.6rem;
+  display: block;
 }
